@@ -71,3 +71,9 @@ Type of data that a symbol refers to is only known at runtime. Symbols are free 
 You can annotate symbols with type declarations, so that the compiler can act on that regarding its optimization. 
 This can be very beneficial for performance critical sections of your code and can often result in very fast object code, 
 that is just as fast as code compiled from a statically typed language. (Common Lisp and Clojure)
+
+#### Strong Typing
+Strong typing means that the language is quite restrictive about casting data of one type to another. Some type safety check is in place.  Java for example is a strongly typed language and thus does not allow a Double to be cast to an Integer. Instead, the language usually provides functions that will convert one type to another type.
+
+#### Weak typing
+Weak typing means that the language is not restrictive about casting data of one type to another. e.g. C
