@@ -77,3 +77,18 @@ Strong typing means that the language is quite restrictive about casting data of
 
 #### Weak typing
 Weak typing means that the language is not restrictive about casting data of one type to another. e.g. C
+
+### Lifetime stages a program runs through
+Source code -> Preprocessor -> Compiler -> Runtime
+
+### Compile Time vs Runtime
+
+#### Compile Time
+- Source code is being transformed into machine code, bytecode or source for a different language
+- Compilation usually consists of multiple stages e.g optimization
+
+#### Runtime
+- Code runs natively on virtual machine. Garbage collection, dynamic typing etc happen here.
+
+#### Just in time compilation (JIT)
+While running an interpreted program, runtime may call the compilation stage whenever code is to be run that has not yet been compiled. This can happen quite a lot depending on the interpreter being used.
