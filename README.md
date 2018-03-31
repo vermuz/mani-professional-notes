@@ -20,8 +20,8 @@ one value. Changing the value will affect all symbols referencing that value.
 When your language does not have features of changing the value itself. (Mostly to help against bug introduced by mutability)
 Some languages will allow you to assign new value to an existing symbol but without overwriting the actual value, so just a new memory location and it will bind your variable to that new location.
 In Java,
-- Passing a primitive into function -> passes value itself
-- Passing an object to a function -> reference to the object
+- Passing a primitive into function -> `passes value itself`
+- Passing an object to a function -> `passes reference to the object`
 ### Types
 - Primitive Types: integers, characters, strings, floats etc
 - Complex Data Types: Arrays, Maps, Lists, Sets, Maps (Dictionaries, hashes, Associative Arrays) etcetera
