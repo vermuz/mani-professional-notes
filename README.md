@@ -35,10 +35,10 @@ def testAddition(n):
 Binding of n is different inside function from outside. Definition of a parameter in a function creates a new binding, introducing new bindings -> **Scope**
 ### Typing
 Type System: Different types of data can be distinguished from another i.e values of type string and values of type integer.
-#### Statically Typed languages
-Type is bound to symbol
-#### Dynamically Typed languages
-Type is bound to value
+
+| Statically Typed languages  | Dynamically Typed languages |
+| ------------- | ------------- |
+| Type is bound to symbol  | Type is bound to value  |
 
 #### Static typing
 Type of data that a symbol refers to is known at compile time. You will have to declare the type of variable. e.e C, Java.
