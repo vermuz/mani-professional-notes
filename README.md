@@ -43,31 +43,31 @@ Type is bound to value
 #### Static typing
 Type of data that a symbol refers to is known at compile time. You will have to declare the type of variable. e.e C, Java.
 
-##### Type Inference
+#### Type Inference
 If a language lets you get away with not declaring types because the compiler is smart enough to figure out what type the symbol must have been. e.g. Haskell, Scala.
 
 Note: These languages are still statically typed as types are still bound to symbols not values.
 
-###### Pros/Cons
-1- Type safety, compiler can check errors in type handling.
-2- Early recognition of errors.
-3- Optimization of compiled code, compiler knows the types and can apply optimizations for the data types.
-4- Code is very verbose (symbol types, function params, custom types to hold data) also if your code is handling type A, it will need changes to support type B or use advanced language features to support multiple types flexibly.
+#### Pros/Cons
+- Type safety, compiler can check errors in type handling.
+- Early recognition of errors.
+- Optimization of compiled code, compiler knows the types and can apply optimizations for the data types.
+- Code is very verbose (symbol types, function params, custom types to hold data) also if your code is handling type A, it will need changes to support type B or use advanced language features to support multiple types flexibly.
 
-###### Dynamic Typing
+#### Dynamic Typing
 Type of data that a symbol refers to is only known at runtime. Symbols are free of types and can refer to any type so you will not see in type declarations, e.g. PHP, JavaScript, Perl
 
-###### Pros/Cons
-1- No type safety at compile time.
-2- Types only become clear at runtime.
-3- Fewer optimizations from compiler since types are unknown.
-4- Less verbose code.
-5- No need for type declarations, and no need for definitions.
-6- You can use language's native collection types rather than build your own.
-7- Life will become difficult if you write functions that accept many different “shapes” of data structures.
-8- You can write a function and apply it to data without being forced to define custom data types for your use case.
+#### Pros/Cons
+- No type safety at compile time.
+- Types only become clear at runtime.
+- Fewer optimizations from compiler since types are unknown.
+- Less verbose code.
+- No need for type declarations, and no need for definitions.
+- You can use language's native collection types rather than build your own.
+- Life will become difficult if you write functions that accept many different “shapes” of data structures.
+- You can write a function and apply it to data without being forced to define custom data types for your use case.
 
-###### Type Hints
+#### Type Hints
 You can annotate symbols with type declarations, so that the compiler can act on that regarding its optimization. 
 This can be very beneficial for performance critical sections of your code and can often result in very fast object code, 
 that is just as fast as code compiled from a statically typed language. (Common Lisp and Clojure)
