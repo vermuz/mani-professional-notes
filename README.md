@@ -118,7 +118,7 @@ def sum(list):
  
 print(sum([5,7,3,8,10]))
 ```
-```
+```python
  To do this recursively:
 
 #!/usr/bin/env python
