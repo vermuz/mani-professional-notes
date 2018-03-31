@@ -48,7 +48,7 @@ If a language lets you get away with not declaring types because the compiler is
 
 Note: These languages are still statically typed as types are still bound to symbols not values.
 
-#### Pros/Cons
+##### Pros/Cons
 - Type safety, compiler can check errors in type handling.
 - Early recognition of errors.
 - Optimization of compiled code, compiler knows the types and can apply optimizations for the data types.
@@ -57,7 +57,7 @@ Note: These languages are still statically typed as types are still bound to sym
 #### Dynamic Typing
 Type of data that a symbol refers to is only known at runtime. Symbols are free of types and can refer to any type so you will not see in type declarations, e.g. PHP, JavaScript, Perl
 
-#### Pros/Cons
+##### Pros/Cons
 - No type safety at compile time.
 - Types only become clear at runtime.
 - Fewer optimizations from compiler since types are unknown.
