@@ -41,7 +41,7 @@ Type System: Different types of data can be distinguished from another i.e value
 | Type is bound to symbol  | Type is bound to value  |
 
 #### Static typing
-Type of data that a symbol refers to is known at compile time. You will have to declare the type of variable. e.e C, Java.
+Type of data that a symbol refers to is known at compile time. You will have to declare the type of variable. e.g C, Java.
 
 #### Type Inference
 If a language lets you get away with not declaring types because the compiler is smart enough to figure out what type the symbol must have been. e.g. Haskell, Scala.
