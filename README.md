@@ -92,3 +92,67 @@ Source code -> Preprocessor -> Compiler -> Runtime
 
 #### Just in time compilation (JIT)
 While running an interpreted program, runtime may call the compilation stage whenever code is to be run that has not yet been compiled. This can happen quite a lot depending on the interpreter being used.
+
+### Mutable State
+When the state of a program changes over time, it is said to have Mutable state. This makes code unmanageable
+and error prone. It should be avoided if possible however if we want to introduce it somwhere in code, it should
+not impact other parts of the code. e.g When the user moves the mouse for example, it is in fact a change in state of the external world.
+
+### Recursion and Iteration
+- Every iterative implementation can be converted to a recursive one and vice versa.
+- Recursion may lead to a stack overflow, as each nested recursive call consumes space
+on the stack.
+- Iterative programs usually rely on mutable state, as you have to make use of a
+variable that counts the iterations or something similar
+
+```python
+def sum(list):
+    sum = 0
+ 
+    # Add every number in the list.
+    for i in range(0, len(list)):
+        sum = sum + list[i]
+ 
+    # Return the sum.
+    return sum
+ 
+print(sum([5,7,3,8,10]))
+```
+```
+ To do this recursively:
+
+#!/usr/bin/env python
+ 
+def sum(list):
+   if len(list) == 1:
+        return list[0]
+   else:
+        return list[0] + sum(list[1:])
+ 
+print(sum([5,7,3,8,10]))
+```
+If the length of the list is one it returns the list (the termination condition).
+
+### Statements vs Expressions
+- Statements don't evaluate to a value.
+- Expressions evaluate to something, i.e a + b is an expression
+- In functional languages everything is an expression,
+a function definition evaluates to a function object that
+can be passed around afterwards.
+
+In Clojure for example if evaluates to to then or else branch
+
+```ruby
+def fn(x,y)
+  y * if x > 10.0
+         0.1
+      else
+         1.0
+      end
+end
+
+printf(“%.2f\n”, fn(8.0, 123.4))
+printf(“%.2f\n”, fn(11.1, 123.4))
+```
+
+Many languages support ternary operator, (? :) but that is mainly syntactic sugar - languages in which everything is an expression do not need such special operators and have conciseness in mind.
