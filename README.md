@@ -12,3 +12,62 @@ remember the foundations that I shouldnt lose sight of in everyday professional 
 
 ### Programming Language Concepts
 
+### Values and Symbols
+Symbols are variables, names that can be given to entities. *A symbol refers to a value. A value can be referred by many
+symbols*. A value is stored in memory, symbol is a reference to that stored memory location. Multiple symbols can reference
+one value. Changing the value will affect all symbols referencing that value.
+### Immutability
+When your language does not have features of changing the value itself. (Mostly to help against bug introduced by mutability)
+Some languages will allow you to assign new value to an existing symbol but without overwriting the actual value, so just a new memory location and it will bind your variable to that new location.
+In Java,
+- Passing a primitive into function -> passes value itself
+- Passing an object to a function -> reference to the object
+### Types
+- Primitive Types: integers, characters, strings, floats etc
+- Complex Data Types: Arrays, Maps, Lists, Sets, Maps (Dictionaries, hashes, Associative Arrays) etcetera
+### Bindings
+```python
+# n inside function is different from n variable which is being assigned a value of 1.
+n = 1
+def testAddition(n):
+    return n+1
+```
+Binding of n is different inside function from outside. Definition of a parameter in a function creates a new binding, introducing new bindings -> **Scope**
+### Typing
+Type System: Different types of data can be distinguished from another i.e values of type string and values of type integer.
+#### Statically Typed languages
+Type is bound to symbol
+#### Dynamically Typed languages
+Type is bound to value
+
+#### Static typing
+Type of data that a symbol refers to is known at compile time. You will have to declare the type of variable. e.e C, Java.
+
+##### Type Inference
+If a language lets you get away with not declaring types because the compiler is smart enough to figure out what type the symbol must have been. e.g. Haskell, Scala.
+
+Note: These languages are still statically typed as types are still bound to symbols not values.
+
+###### Pros/Cons
+1- Type safety, compiler can check errors in type handling.
+2- Early recognition of errors.
+3- Optimization of compiled code, compiler knows the types and can apply optimizations for the data types.
+4- Code is very verbose (symbol types, function params, custom types to hold data) also if your code is handling type A, it will need changes to support type B or use advanced language features to support multiple types flexibly.
+
+###### Dynamic Typing
+Type of data that a symbol refers to is only known at runtime. Symbols are free of types and can refer to any type so you will not see in type declarations, e.g. PHP, JavaScript, Perl
+
+###### Pros/Cons
+1- No type safety at compile time.
+2- Types only become clear at runtime.
+3- Fewer optimizations from compiler since types are unknown.
+4- Less verbose code.
+5- No need for type declarations, and no need for definitions.
+6- You can use language's native collection types rather than build your own.
+7- Life will become difficult if you write functions that accept many different “shapes” of data structures.
+8- You can write a function and apply it to data without being forced to define custom data types for your use case.
+
+###### Type Hints
+You can annotate symbols with type declarations, so that the compiler can act on that regarding its optimization. 
+This can be very beneficial for performance critical sections of your code and can often result in very fast object code, 
+that is just as fast as code compiled from a statically typed language. (Common Lisp and Clojure)
