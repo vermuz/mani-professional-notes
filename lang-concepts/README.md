@@ -455,4 +455,20 @@ So what makes this function a closure,
 - Function defines a local variable and the function being defined and returned right after references that variable.
 - We can only access that value via the internal function hence hiding it from the rest of the program.
 
-This rather simple concept of Closures resembles the basic behavior of an object system. By calling make_acc multiple times, you can create multiple  “objects” (= Closures) that all maintain their own state in distinct instances of the variable value , i.e. independently from each other.
+This rather simple concept of Closures resembles the basic behavior of an object system. By calling make_acc multiple times, you can create multiple  “objects” (= Closures) that all maintain their own state in distinct instances of the variable value , i.e. independently from each other. Closure and thus forces you to keep your code cleanand independent from each other as it’s not possible to access that state from the external world.
+
+### Currying
+
+*Currying is a tool that makes it possible for the programmer to call a function with fewer
+arguments than it originally expects. Instead of an error being thrown, another function is
+being returned that expects the missing rest of the arguments*
+
+```OCaml
+As an example, let’s have a look at a code snippet in OCaml:
+let fn3 a b c = a + b + c;;
+let fn1 = fn3 10 20;; (* applying Currying *)
+print_int (fn1 30);; (* will print 60 *)
+```
+
+Due to Currying, it will hold a function derived from fn3 , with the first two parameters passed already and
+expecting one more parameter (c). 
