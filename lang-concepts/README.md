@@ -336,3 +336,65 @@ More tail recursion links
 - http://markmiyashita.com/cs61a/tail_recursion/tail_recursion_and_tail_optimized_calls/
 - http://paulbutler.org/archives/tail-recursion-in-python/
 - http://disq.us/url?url=http%3A%2F%2Fwww.gabriel.urdhr.fr%2F2018%2F03%2F19%2Fsibling-tco-in-python%2F%3AL62UknXluZmwSI5K0CMjASx4TWg&cuid=3437142
+
+### Advanced Concepts
+
+These concepts are not necessarily part of all programming languages but their usage makes code concise, abstract and less error prone. This knowledge will also help choosing a language for a task.
+
+Additionally, thinking outside the box and seeing the bigger picture can only be beneficial for ones awareness of 
+what the “programming language world” looks like
+
+### First Class Functions (Higher
+Order Functions)
+
+If a language supports them then you can pass them around like data in your program.
+
+```javascript
+// Defining two functions and
+// binding them to variables
+var add = function(a, b) {
+    return a + b;
+}
+var sub = function(a, b) {
+    return a - b;
+}
+// Test expects a function to be passed
+function test(f) {
+    console.log(“about to call f...”);
+    var fresult = f();
+    console.log(“done calling f: ” + fresult);
+}
+// Calling functions via their bindings
+var functions = [ add, 123, sub ];
+console.log(functions[0](11, 22));
+console.log(functions[2](22, 11));
+
+// We define function right at the spot.
+// Anonymous or lambda
+test(function() {
+    return 123;
+});
+```
+
+#### Simple Python example
+
+```python 
+def multiply(x, y):
+    return x * y
+```
+can be expressed, as 
+```python 
+r = lambda x, y: x * y
+r(12, 3)   # call the lambda function
+```
+Here we are using two arguments x  and y , expression after colon is the body of the lambda function. As you can see lambda function has no name and is called through the variable it is assigned to.
+You don’t need to assign lambda function to a variable.
+
+```python
+(lambda x, y: x * y)(3,4)
+1
+(lambda x, y: x * y)(3,4)
+Expected Output:
+12
+```
+Note that lambda function can’t contain more than one expression.
