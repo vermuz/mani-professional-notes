@@ -235,3 +235,80 @@ printf “factorial of 5 is %d\n”, fact(5)
 ![Screenshot](Diagrams/scope.svg)
 #### Scope
 Scope refers to the “parts” of a program in which a variable or binding is visible / accessible. A global symbol for example is usually visible throughout the entire source code while a local symbol is only visible within the function or block where it has been created.
+
+#### Free Variables
+
+```
+d = 5
+
+def x(a, b) {
+   c = 3;
+   return a + b + c + d;
+}
+
+def y() {
+   d = 10;
+   return x(1, 2);
+}
+```
+- function x takes two params a and b 
+- defines a local variable c
+- a , b or c are bound locally
+- access to variable d in the function is not as obvious
+- variable d is a free variable
+
+So which one should be consider d's value, 5? or 10?
+
+### Lexical scope
+
+First definition of d so 5
+
+### Dynamic scope
+
+- Check out the call stack so 10. That is the value after which we make a call to x.
+
+#### Issues:
+- Runtime analysis of call stack.
+- Makes debugging hard.
+
+#### Advantages:
+
+The benefit of dynamic variables is that you can change their binding locally, meaning that for the very function you are about to call you can “install” a different binding into the dynamic variable than for the rest of the
+program. That is usually accomplished by a statement called let or binding
+
+```clojure
+An example in Clojure shows this principle:
+;; first, define our available “logger” functions:
+(defn file-logger [msg]
+   (println (str “FILE: ” msg)))
+
+(defn console-logger [msg]
+   (println (str “DB: ” msg)))
+
+;; define and initialize a dynamically scoped symbol:
+(def ^:dynamic logger file-logger)
+
+;; we log via this function:
+(defn log [msg]
+     (logger msg))
+;; and here is the example that temporarily rebinds the dynamic symbol:
+(defn log-some []
+    (log “logging to file logger”)
+    (binding [logger console-logger]
+      (log “logging to console logger”)
+      (log “still logging to console logger”))
+    (log “logging to file logger again”))
+
+;; call it:
+(log-some)
+
+When running this, it will print:
+FILE: logging to file logger
+DB: logging to console logger
+DB: still logging to console logger
+FILE: logging to file logger again
+So this saves you from passing the appropriate logger to each and every function.
+```
+
+This has no impact on threads as this is not hijacking the global scope instead it is just shadowing the global
+value for the block of code that it embraces.
