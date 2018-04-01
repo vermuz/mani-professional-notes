@@ -449,3 +449,10 @@ console.log(acc2(30)); // 50
 `Return value is closure`
 
 ![Screenshot](Diagrams/closure.png)
+
+So what makes this function a closure,
+- A function that creates another function.
+- Function defines a local variable and the function being defined and returned right after references that variable.
+- We can only access that value via the internal function hence hiding it from the rest of the program.
+
+This rather simple concept of Closures resembles the basic behavior of an object system. By calling make_acc multiple times, you can create multiple  “objects” (= Closures) that all maintain their own state in distinct instances of the variable value , i.e. independently from each other.
