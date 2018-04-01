@@ -418,3 +418,11 @@ when the left hand side evaluates to true , the right hand side is not relevant 
 For evaluating a logical OR ( || here), when the left hand side evaluates to true , the right hand side is not relevant anymore for determining the final result of the entire.
 
 For logical AND ( && here), it is the other way round: When the left hand side evaluates to false , it is not necessary to evaluate the right hand side anymore to find out the value of the entire AND expression and that is why it is not being evaluated in that case. It’s even very common to use Short circuiting in shell scripts.
+
+### Closures
+
+- Closures take lexical scoping one step further. 
+- The feature of Closures depends on the capability of being able to  create functions 
+(often called lambdas, anonymous functions or first class functions) at runtime.
+- Closures become a part of your program (mostly automatically, i.e. without having to use
+a special syntax for creating one) when you have free lexical variables in a function.
