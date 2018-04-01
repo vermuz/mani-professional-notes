@@ -426,3 +426,26 @@ For logical AND ( && here), it is the other way round: When the left hand side e
 (often called lambdas, anonymous functions or first class functions) at runtime.
 - Closures become a part of your program (mostly automatically, i.e. without having to use
 a special syntax for creating one) when you have free lexical variables in a function.
+
+```javascript
+Let’s look at an example (JavaScript in this case):
+function make_acc() {
+    var value = 0;
+    return function(n) {
+        value += n;
+        return value;
+    }
+}
+
+var acc1 = make_acc();
+var acc2 = make_acc();
+
+console.log(acc1(2)); // 2
+console.log(acc2(20)); // 20
+console.log(acc1(3)); // 5
+console.log(acc2(30)); // 50
+```
+
+`Return value is closure`
+
+![Screenshot](Diagrams/closure.png)
