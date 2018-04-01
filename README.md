@@ -231,3 +231,9 @@ printf “factorial of 5 is %d\n”, fact(5)
 - Parts of the programming dealing with I/O should use imperative style.
 - Performance critical parts of a program should use imperative style
 - Declarative style is better than imperative style for its conciseness
+
+![Screenshot](Diagrams/scope.svg)
+
+#### Scope
+
+Scope refers to the “parts” of a program in which a variable or binding is visible / accessible. A global symbol for example is usually visible throughout the entire source code while a local symbol is only visible within the function or block where it has been created.
