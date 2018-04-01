@@ -157,5 +157,6 @@ printf(“%.2f\n”, fn(11.1, 123.4))
 
 Many languages support ternary operator, (? :) but that is mainly syntactic sugar - languages in which everything is an expression do not need such special operators and have conciseness in mind.
 
-Diagrams/mermaid-diagram-20180331200051.svg
+### Paradigms
+
 ![Screenshot](Diagrams/mermaid-diagram-20180331200051.svg)
