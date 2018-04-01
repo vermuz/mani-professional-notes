@@ -400,7 +400,7 @@ Note that lambda function can’t contain more than one expression.
 
 ### Short Circuiting
 
-a && b && c , when a is false, b and c won’t even get evaluated at all, as the resulting Boolean value of the entire expression is already clear at that point
+`a && b && c` , when a is false, b and c won’t even get evaluated at all, as the resulting Boolean value of the entire expression is already clear at that point
 
 ```
 true || print(“1\n”)
