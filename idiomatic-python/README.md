@@ -266,3 +266,30 @@ def alternate_get_response(url):
     # ...
         raise
 ```
+
+### Data
+
+```python
+a = 'foo'
+b = 'foo'
+c = 'foo'
+
+
+a = b = c = 'foo'
+```
+
+### Swapping via tuples
+
+```python
+x = 'First'
+y = 'Second'
+temp = x
+x = y
+y = temp
+```
+
+```python
+x = 'First'
+y = 'Second'
+(x, y) = (y, x)
+```
