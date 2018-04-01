@@ -160,3 +160,74 @@ Many languages support ternary operator, (? :) but that is mainly syntactic suga
 ### Paradigms
 
 ![Screenshot](Diagrams/mermaid-diagram-20180331200051.svg)
+
+### Imperative Languages
+Examples: C, Java
+- How you want to do something
+- Relying on mutable state is common
+- Declaration and definition of variables and
+then alter values
+- Favors Iteration
+
+### Declarative languages
+Examples: Haskell
+
+- It will not describe how you want to do something
+- It will describe what we want to receive as a result
+- How dependencies between entities are
+- Mostly includes functional programming languages
+- Favors recursion (this makes it possible to avoid
+mutable state which is desirable)
+
+```haskell
+fact n
+   | n > 1 = n * fact (n - 1)
+   | otherwise = 1
+main = print (fact 5)
+```
+
+Here we just say that the factorial of n is the product of n and the factorial of n-1 , for an n that is greater than 1 . For n not greater than 1 , the factorial is just 1 .
+
+Prolog code shows expression more in the problem domain instead of having to translate it into something more
+mechanical,
+
+```prolog
+factorial(0,1). /* factorial of 0 is 1. */
+factorial(N,F) :- /* factorial of N is F if...*/
+    N > 0, /* N is greater than 0 and...*/
+    N1 is N - 1, /* N1 is equal to N-1 and...*/
+    factorial(N1,F1), /* factorial of N1 is F1 and...*/
+    F is F1 * N. /* F equals F1 * N. */
+```
+
+People usually chose Imperative style over Declarative programming because of the ease of not writing in Abstractions
+that confuse the reader and using a smaller memory footprint, in modern times machines are not facing constraints that
+would make declarative programming languages slower than imperative style languages.
+
+You can do both imperative and declarative program development in one language,
+
+```ruby
+The declarative version:
+def fact(n)
+     (n > 1) ? n * fact(n - 1) : 1
+end
+
+printf “fact of 5 is %d\n”, fact(5)
+
+And here the same algorithm, expressed in a more imperative style:
+
+def fact(n)
+   result = 1
+   while n > 0 do
+        result = result * n
+        n -= 1
+   end
+   result
+end
+
+printf “factorial of 5 is %d\n”, fact(5)
+```
+#### Switching between them
+- Parts of the programming dealing with I/O should use imperative style.
+- Performance critical parts of a program should use imperative style
+- Declarative style is better than imperative style for its conciseness
