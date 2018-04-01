@@ -186,7 +186,7 @@ fact n
 main = print (fact 5)
 ```
 
-Here we just say that the factorial of n is the product of n and the factorial of n-1 , for an n that is greater than 1 . For n not greater than 1 , the factorial is just 1 .
+Here in Haskell, we just say that the factorial of n is the product of n and the factorial of n-1 , for an n that is greater than 1 . For n not greater than 1 , the factorial is just 1 .
 
 Prolog code shows expression more in the problem domain instead of having to translate it into something more
 mechanical,
