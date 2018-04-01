@@ -312,3 +312,46 @@ So this saves you from passing the appropriate logger to each and every function
 
 This has no impact on threads as this is not hijacking the global scope instead it is just shadowing the global
 value for the block of code that it embraces.
+
+### Tail Recursion
+
+A recursive program might crash when recursive function calls itself too often in a nested way because there is only
+a limited space available in the call stack. With each nested call, the stack fills up a bit. Once it is full and another call is being made, the program crashes or throws an exception.
+
+The stack is responsible for keeping track of the point of return when a function exits. The call stack often also holds the arguments passed to a function call and any local variables a function declares. So when a recursion “calls too deep”, the stack will run out of space
+
+Errors raised:
+- Segmentation in C
+- StackOverflowException Java
+
+“A recursive call is said to be tail recursive when its result is not involved in any further processing of the caller.”
+“A recursive call is tail recursive when its caller does not need to wait for the result in order to do more things to it.”
+“A recursive call is tail recursive when it is the last thing the caller does before returning.”
+
+A recursive call that sits in a tail position can be replaced by a simple “goto”, which - contrary to a function call - does not consume space on the stack. This is possible because due to the tail position of the call, the caller does not even have to take a look at the result of that function call. So returning to that caller is just waste and can be skipped.
+
+```python
+def factorial(n):
+  if n == 0: return 1
+  else: return factorial(n-1) * n
+
+def tail_factorial(n, accumulator=1):
+  if n == 0: return 1
+  else: return tail_factorial(n-1, accumulator * n)
+```
+
+They both look similar, and in fact the original even looks like it's in the tail call form, but since there's 
+that pesky multiplication which is outside of the recursive call it can't be optimized away. In the non-tail version the computer needs to keep track of the number you're going to multiply it with, whereas in the tail-call version the computer can realize that the only work left to do is another function call and it can forget about all of the variables and state used in the current function 
+
+This is all great, but there's a problem with that example, namely that python doesn't support tail-call optimization. There's a few reasons for this, the simplest of which is just that python is built more around the idea of iteration than recursion.
+
+### Tail Call Optimization
+Compilers for languages that feature recursive programming style often offer a feature called Tail Call Optimization (often abbreviated TCO). The compiler understands when a call is a tail call and will then produce object code that does not consume any stack space, effectively resolving the risk of a potential stack overflow, no matter how deep the
+nested calls will get. e.g Haskell, Scheme,  JVM does not support TCO natively
+
+A common pattern is to introduce a so called “accumulator” variable that is being passed into the function.
+
+More tail recursion links
+- http://markmiyashita.com/cs61a/tail_recursion/tail_recursion_and_tail_optimized_calls/
+- http://paulbutler.org/archives/tail-recursion-in-python/
+- http://disq.us/url?url=http%3A%2F%2Fwww.gabriel.urdhr.fr%2F2018%2F03%2F19%2Fsibling-tco-in-python%2F%3AL62UknXluZmwSI5K0CMjASx4TWg&cuid=3437142
