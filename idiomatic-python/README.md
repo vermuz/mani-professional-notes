@@ -132,3 +132,80 @@ def all_equal(a, b, c):
     return a == b == c
 ```
 
+### Arguments
+Keywords arguments are distinguished from “normal” arguments by the presence of an = and a default value.
+
+```python
+def list(list_value, separator):
+    print('{}'.format(separator).join(list_value))
+```
+```python
+def list(list_value, separator=' '):
+    print('{}'.format(separator).join(list_value))
+```
+Using `*args and **kwargs` as parameters allows a function to accept an arbitrary list of positional and keyword arguments
+
+```python
+def wrap_add_for_console_output(x, y):
+    print('--------------------------------')
+    print(str(x + y))
+    print('--------------------------------')
+
+wrap_add_for_console_output(2,3)
+```
+```python
+def for_console_output(func):
+    def wrapper(*args, **kwargs):
+        print('--------------------------------')
+        print(str(func(*args, **kwargs)))
+        print('--------------------------------')
+    return wrapper
+
+@for_console_output
+def add(x, y):
+    return x + y
+    
+add(3, 2)
+```
+
+### Treat functions as values
+
+```python
+
+def addition_table():
+    for x in range(1, 3):
+        for y in range(1, 3):
+            print(str(x + y) + '\n')
+
+def subtraction_table():
+    for x in range(1, 3):
+        for y in range(1, 3):
+            print(str(x - y) + '\n')
+
+def multiplication_table():
+    for x in range(1, 3):
+        for y in range(1, 3):
+            print(str(x * y) + '\n')
+
+def division_table():
+    for x in range(1, 3):
+        for y in range(1, 3):
+            print(str(x / y) + '\n')
+
+addition_table()
+subtraction_table()
+multiplication_table()
+division_table()
+```
+
+```python
+import operator as op
+
+def print_table(operator):
+    for x in range(1, 3):
+        for y in range(1, 3):
+            print(str(operator(x, y)) + '\n')
+
+for operator in (op.add, op.sub, op.mul, op.itruediv):
+    print_table(operator)
+```
