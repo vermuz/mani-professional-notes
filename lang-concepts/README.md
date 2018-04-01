@@ -344,8 +344,7 @@ These concepts are not necessarily part of all programming languages but their u
 Additionally, thinking outside the box and seeing the bigger picture can only be beneficial for ones awareness of 
 what the “programming language world” looks like
 
-### First Class Functions (Higher
-Order Functions)
+### First Class Functions (Higher Order Functions)
 
 If a language supports them then you can pass them around like data in your program.
 
