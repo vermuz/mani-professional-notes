@@ -397,3 +397,24 @@ Expected Output:
 12
 ```
 Note that lambda function can’t contain more than one expression.
+
+### Short Circuiting
+
+a && b && c , when a is false, b and c won’t even get evaluated at all, as the resulting Boolean value of the entire expression is already clear at that point
+
+```
+true || print(“1\n”)
+false || print(“2\n”)
+true && print(“3\n”)
+false && print(“4\n”)
+
+
+2
+3
+```
+
+when the left hand side evaluates to true , the right hand side is not relevant anymore for determining the final result of the entire expression.
+
+For evaluating a logical OR ( || here), when the left hand side evaluates to true , the right hand side is not relevant anymore for determining the final result of the entire.
+
+For logical AND ( && here), it is the other way round: When the left hand side evaluates to false , it is not necessary to evaluate the right hand side anymore to find out the value of the entire AND expression and that is why it is not being evaluated in that case. It’s even very common to use Short circuiting in shell scripts.
