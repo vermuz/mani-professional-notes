@@ -235,6 +235,9 @@ def getlevel(config_dict):
         # return None
         return None
 ```
+
+### Raise Exceptions
+
 ```python
 import requests
 def get_response(url):
@@ -254,7 +257,7 @@ def get_response(url):
 # If we need to make note of the exception, we
 # would write the function this way...
 
-def alternate_get_json_response(url):
+def alternate_get_response(url):
     try:
         r = requests.get(url)
         return r.json()
