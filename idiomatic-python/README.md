@@ -209,3 +209,29 @@ def print_table(operator):
 for operator in (op.add, op.sub, op.mul, op.itruediv):
     print_table(operator)
 ```
+
+### Exceptions
+
+```python
+def getlevel(dict):
+    if 'ENABLE_LOG' in dict:
+        if dict['ENABLE_LOG'] != True:
+            return None
+        elif not 'DEFAULT_LEVEL' in dict:
+            return None
+        else:
+            return dict['DEFAULT_LEVEL']
+    else:
+        return None
+```
+```python
+def getlevel(config_dict):
+    try:
+        if dict['ENABLE_LOG']:
+            return dict['DEFAULT_LEVEL']
+    except KeyError:
+        # if either value wasn't present, a
+        # KeyError will be raised, so
+        # return None
+        return None
+```
