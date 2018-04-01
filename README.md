@@ -6,7 +6,8 @@ In my professional career, I have always considered learning to be one constant.
 ### Table of Contents
 
 1. [Programming Language Concepts](lang-concepts)
-1. [Pragmatic thinking](pragmatic-thinking)
+2. [Pragmatic thinking](pragmatic-thinking)
+3. [Idiomatic Python](idiomatic-python)
 
 # License
 
