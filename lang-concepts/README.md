@@ -472,3 +472,25 @@ print_int (fn1 30);; (* will print 60 *)
 
 Due to Currying, it will hold a function derived from fn3 , with the first two parameters passed already and
 expecting one more parameter (c). 
+
+```python
+# This is meant to show trivial examples of currying.
+# I know there are way more effective methods of doing this
+# but this is meant to be illustrative, I also want to add 
+# a few non-trivial examples to show how its useful.
+import operator
+
+def curry(func, var):
+    y = var
+    def f(x):
+        return func(x, y)
+    return f
+
+if __name__ == '__main__':
+    double = curry(operator.mul, 2)
+    add7 = curry(operator.add, 7)
+    a = double(6)
+    b = add7(2)
+    print("Double 6: %i" %a)
+    print("Add 7 to 2: %i" %b)
+```
