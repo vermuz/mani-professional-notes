@@ -1,9 +1,7 @@
 # Mani Professional Notes
 
 ### Introduction
-In my professional career, I have always considered learning to be one constant. While acquiring new skills, it would
-be great to keep track of certain principles that can be applied in any new environment. This is my repo to help me
-remember the foundations that I shouldnt lose sight of in everyday professional work.
+In my professional career, I have always considered learning to be one constant. This is my professional notebook.
 
 ### Table of Contents
 
