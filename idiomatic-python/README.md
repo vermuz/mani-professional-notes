@@ -444,3 +444,27 @@ def contains_zero(iterable):
 >>> print(head)
 ['a', 'b', 'c']
 ```
+
+### dict as a substitute for a switch...case
+
+- Python doesn’t have a switch...case construct.functions are
+- first-class objects in Python, so we can treat them the same as any other variable.
+
+```python
+def apply_operation(l_operand, r_operand, operator):
+    if operator == '+':
+        return l_operand + r_operand
+    elif operator == '-':
+        return l_operand - r_operand
+    elif operator == '*':
+        return l_operand * r_operand
+    elif operator == '/':
+        return l_operand / r_operand
+
+#---------------------------
+def apply_operation(l_operand, r_operand, operator):
+    import operator as op
+    operator_mapper = {'+': op.add, '-': op.sub,
+        '*': op.mul, '/': op.truediv}
+    return operator_mapper[operator](left_operand, right_operand)
+```
