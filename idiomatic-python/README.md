@@ -430,7 +430,7 @@ def contains_zero(iterable):
     return not all(iterable)
 ```
 
-### Rest of list
+### Rest of list -> *
 
 ```python
 >>> chars = ['a', 'b', 'c', 'd', 'e']
