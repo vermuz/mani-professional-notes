@@ -426,5 +426,6 @@ def contains_zero(iterable):
     return False
 #-------------------------
 def contains_zero(iterable):
+    # 0 is "Falsy
     return not all(iterable)
 ```
