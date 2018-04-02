@@ -305,3 +305,15 @@ format_name = format_name.replace(':', ' by')
 name = ' Pragmatic Books'
 format_name = name.strip().upper().replace(':', ' by')
 ```
+
+### Single String from list
+
+```python
+list = ['True', 'False', 'File not found']
+res_string = ''
+for str in list:
+    res_string += str
+
+list = ['True', 'False', 'File not found']
+res_string = ''.join(list)
+```
