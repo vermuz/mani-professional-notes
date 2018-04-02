@@ -429,3 +429,18 @@ def contains_zero(iterable):
     # 0 is "Falsy
     return not all(iterable)
 ```
+
+### Rest of list
+
+```python
+>>> chars = ['a', 'b', 'c', 'd', 'e']
+>>> (first, second, *rest) = chars
+>>> print(rest)
+['c', 'd', 'e']
+>>> (first, *middle, last) = chars
+>>> print(middle)
+['b', 'c', 'd']
+>>> (*head, penultimate, last) = chars
+>>> print(head)
+['a', 'b', 'c']
+```
