@@ -342,15 +342,18 @@ for element in some_string:
 return hash_value
 ```
 
-### Formatting
+### Formatting using format
 
 ```python
 def get_user_info(user):
-# Tedious to type and prone to conversion errors
     return 'Name: ' + user.name + ', Age: ' + \
         str(user.age) + ', Sex: ' + user.sex
 
 def get_user_info(user):
     return 'Name: %s, Age: %i, Sex: %c' % (
         user.name, user.age, user.sex)
+
+def get_user_info(user):
+    output = 'Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=user)
+    return output
 ```
