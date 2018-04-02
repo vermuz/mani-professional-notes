@@ -468,3 +468,15 @@ def apply_operation(l_operand, r_operand, operator):
         '*': op.mul, '/': op.truediv}
     return operator_mapper[operator](l_operand, r_operand)
 ```
+
+### default parameter of dict.get to provide default values
+
+```python
+log_severity = None
+if 'severity' in config:
+    log_severity = config['severity']
+else:
+    log_severity = 'Info'
+#---------------------
+log_severity = config.get('severity', 'Info')
+```
