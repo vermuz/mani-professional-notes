@@ -273,8 +273,7 @@ def alternate_get_response(url):
 a = 'foo'
 b = 'foo'
 c = 'foo'
-
-
+#--------------------------------
 a = b = c = 'foo'
 ```
 
@@ -287,7 +286,7 @@ temp = x
 x = y
 y = temp
 ```
-
+#--------------------------------
 ```python
 x = 'First'
 y = 'Second'
@@ -301,7 +300,7 @@ name = ' Pragmatic Books'
 format_name = name.strip()
 format_name = format_name.upper()
 format_name = format_name.replace(':', ' by')
-
+#--------------------------------
 name = ' Pragmatic Books'
 format_name = name.strip().upper().replace(':', ' by')
 ```
@@ -313,7 +312,7 @@ list = ['True', 'False', 'File not found']
 res_string = ''
 for str in list:
     res_string += str
-
+#--------------------------------
 list = ['True', 'False', 'File not found']
 res_string = ''.join(list)
 ```
@@ -335,7 +334,7 @@ for element in some_string:
     hash_value += char_hash[e]
 return hash_value
 
-
+#--------------------------------
 hash_value = 0
 for element in some_string:
     hash_value += ord(e)
@@ -348,11 +347,11 @@ return hash_value
 def get_user_info(user):
     return 'Name: ' + user.name + ', Age: ' + \
         str(user.age) + ', Sex: ' + user.sex
-
+#--------------------------------
 def get_user_info(user):
     return 'Name: %s, Age: %i, Sex: %c' % (
         user.name, user.age, user.sex)
-
+#--------------------------------
 def get_user_info(user):
     output = 'Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=user)
     return output
@@ -366,7 +365,7 @@ list2 = list()
 for element in list1:
     if is_prime(element):
         list2.append(element + 5)
-
+#--------------------------------
 list1 = range(10)
 list2 = [element + 5
          for element in list1
