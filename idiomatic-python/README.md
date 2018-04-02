@@ -466,5 +466,5 @@ def apply_operation(l_operand, r_operand, operator):
     import operator as op
     operator_mapper = {'+': op.add, '-': op.sub,
         '*': op.mul, '/': op.truediv}
-    return operator_mapper[operator](left_operand, right_operand)
+    return operator_mapper[operator](l_operand, r_operand)
 ```
