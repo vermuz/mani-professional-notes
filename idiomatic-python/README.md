@@ -492,3 +492,58 @@ user_email = {}
 user_email = {user.name: user.email
               for user in users if user.email}
 ```
+
+### Sets
+
+```python
+def get_both_popular_and_active_users():
+    # Assume the following two functions each return a
+    # list of user names
+    most_popular_users = get_list_of_most_popular_users()
+    most_active_users = get_list_of_most_active_users()
+    popular_and_active_users = []
+    for user in most_active_users:
+        if user in most_popular_users:
+        popular_and_active_users.append(user)
+    return popular_and_active_users
+    
+#-----------------------------------------------
+def get_both_popular_and_active_users():
+    # Assume the following two functions each return a
+    # list of user names
+    return(set(
+        get_list_of_most_active_users()) & set(
+            get_list_of_most_popular_users()))
+```
+
+### Set comprehension
+
+```python
+users_first_names = set()
+for user in users:
+    users_first_names.add(user.first_name)
+#-----------------------------------------------
+users_first_names = {user.first_name for user in users}
+```
+
+### Determine if two lists share any common values
+
+The & set operator gracefully solves a very common task: given two lists, do any of the elements in the first list appear in the second?
+
+```python
+list_one = ['Manny', 'Mani', 'Ali']
+list_two = ['Chaudhry', 'Usman', 'Ali']
+
+def has_duplicate(list_one, list_two):
+duplicate_name = False
+    for name in list_one:
+        if name in list_two:
+            duplicate_name = True
+    return duplicate_name
+#--------------------------------------
+list_one = ['Manny', 'Mani', 'Ali']
+list_two = ['Chaudhry', 'Usman', 'Ali']
+
+def has_duplicate(list_one, list_two):
+    return set(list_one) & set(list_two)
+```
