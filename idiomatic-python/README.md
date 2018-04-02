@@ -413,3 +413,18 @@ for element in nums:
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 sum = sum(nums)
 ```
+
+### all
+
+Takes an iterable and returns True if bool(element) is True for all elements
+
+```python
+def contains_zero(iterable):
+    for e in iterable:
+        if e == 0:
+            return True
+    return False
+#-------------------------
+def contains_zero(iterable):
+    return not all(iterable)
+```
