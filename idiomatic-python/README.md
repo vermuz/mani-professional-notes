@@ -293,3 +293,15 @@ x = 'First'
 y = 'Second'
 (x, y) = (y, x)
 ```
+
+### Chain String functions
+
+```python
+name = ' Pragmatic Books'
+format_name = name.strip()
+format_name = format_name.upper()
+format_name = format_name.replace(':', ' by')
+
+name = ' Pragmatic Books'
+format_name = name.strip().upper().replace(':', ' by')
+```
