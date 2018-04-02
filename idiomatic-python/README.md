@@ -341,3 +341,16 @@ for element in some_string:
     hash_value += ord(e)
 return hash_value
 ```
+
+### Formatting
+
+```python
+def get_user_info(user):
+# Tedious to type and prone to conversion errors
+    return 'Name: ' + user.name + ', Age: ' + \
+        str(user.age) + ', Sex: ' + user.sex
+
+def get_user_info(user):
+    return 'Name: %s, Age: %i, Sex: %c' % (
+        user.name, user.age, user.sex)
+```
