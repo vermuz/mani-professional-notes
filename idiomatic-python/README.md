@@ -480,3 +480,15 @@ else:
 #---------------------
 log_severity = config.get('severity', 'Info')
 ```
+
+### Dict Comprehension
+
+```python
+user_email = {}
+    for user in users:
+        if user.email:
+            user_email[user.name] = user.email
+#--------------------------
+user_email = {user.name: user.email
+              for user in users if user.email}
+```
