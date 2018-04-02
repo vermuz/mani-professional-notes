@@ -371,3 +371,16 @@ list2 = [element + 5
          for element in list1
          if is_prime(element)]
 ```
+
+### Negative Indexes
+
+Negative indexes count backwards starting at the end of a list
+
+```python
+def suffix(word):
+    word_len = len(word)
+    return word[word_len - 2:]
+
+def suffix(word):
+    return word[-2:]
+```
