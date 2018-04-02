@@ -357,3 +357,18 @@ def get_user_info(user):
     output = 'Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=user)
     return output
 ```
+
+### list comprehension
+
+```python
+list1 = range(10)
+list2 = list()
+for element in list1:
+    if is_prime(element):
+        list2.append(element + 5)
+
+list1 = range(10)
+list2 = [element + 5
+    for element in list1
+    if is_prime(element)]
+```
