@@ -317,3 +317,27 @@ for str in list:
 list = ['True', 'False', 'File not found']
 res_string = ''.join(list)
 ```
+# ASCII Code
+
+```python
+
+hash_value = 0
+char_hash = {
+    'a': 97,
+    'b': 98,
+    'c': 99,
+    # ...
+    'y': 121,
+    'z': 122,
+}
+
+for element in some_string:
+    hash_value += char_hash[e]
+return hash_value
+
+
+hash_value = 0
+for element in some_string:
+    hash_value += ord(e)
+return hash_value
+```
