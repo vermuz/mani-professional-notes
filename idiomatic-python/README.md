@@ -384,3 +384,20 @@ def suffix(word):
 def suffix(word):
     return word[-2:]
 ```
+
+### Prefer list comprehensions to the built-in map() and filter()
+
+```python
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+def is_odd(number):
+    return number % 2 == 1
+
+odd_nums = filter(is_odd, nums)
+odd_nums_times_two = list(map(lambda x: x * 2, odd_nums))
+
+#---------------------------------
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+odd_nums_times_two = [n * 2 for n in nums if n % 2 == 1]
+```
