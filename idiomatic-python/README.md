@@ -401,3 +401,15 @@ odd_nums_times_two = list(map(lambda x: x * 2, odd_nums))
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 odd_nums_times_two = [n * 2 for n in nums if n % 2 == 1]
 ```
+
+### Sum
+
+```python
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum = 0
+for element in nums:
+    sum += element
+#------------------------
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum = sum(nums)
+```
