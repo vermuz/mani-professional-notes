@@ -607,3 +607,39 @@ def stat(list):
 
 (mean, median, mode) = stat([10, 20, 20, 30])
 ```
+
+### Classes
+
+### @classmethod
+
+```python
+class Student():
+    __tablename__ = 'student'
+
+    def table_name(self):
+        return Student.__tablename__
+
+class DerivedStudent(Student):
+    __tablename__ = 'derived_student'
+
+b = DerivedBlog()
+print(b.table_name()) # prints 'student'
+
+#---------------------------------
+
+class Student():
+    __tablename__ = 'student'
+
+    def table_name(self):
+        return self.__tablename__
+
+    @classmethod
+    def other_table_name(cls):
+        return cls.__tablename__
+
+class DerivedStudent(Studen):
+    __tablename__ = 'derived_student'
+    
+b = DerivedBlog()
+print(b.table_name()) # prints 'derived_student'
+```
