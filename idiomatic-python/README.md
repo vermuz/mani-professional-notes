@@ -547,3 +547,16 @@ list_two = ['Chaudhry', 'Usman', 'Ali']
 def has_duplicate(list_one, list_two):
     return set(list_one) & set(list_two)
 ```
+
+## Eliminate duplicate entries
+
+list or dict with duplicate values.
+
+```python
+unique_names = []
+for surname in surnames:
+    if name not in unique_names:
+        unique_names.append(name)
+#-------------------------------------
+unique_names = set(surnames)
+```
