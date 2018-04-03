@@ -570,3 +570,9 @@ from collections import namedtuple
 
 EmployeeRow = namedtuple('EmployeeRow', ['f_name', 'l_name', 'department', 'salary', 'hiring_date'])
 ```
+# Ignore extra data with _
+
+```python
+(name, age, temp, temp1) = user_info(user)
+(name, age, _, _) = user_info(user)
+```
