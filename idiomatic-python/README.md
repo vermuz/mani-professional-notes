@@ -595,3 +595,15 @@ list = ['dog', 'Rexxx', 10]
 output = ('{name} the {animal} is {age} years old'.format(
 animal=animal, name=name, age=age))
 ```
+
+### Return multiple values
+
+```python
+def stat(list):
+    mean = float(sum(list) / len(list)) 
+    median = list[int(len(list) / 2)]
+    mode = Counter(list).most_common(1)[0][0]
+    return (mean, median, mode)
+
+(mean, median, mode) = stat([10, 20, 20, 30])
+```
