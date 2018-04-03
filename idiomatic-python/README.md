@@ -548,7 +548,7 @@ def has_duplicate(list_one, list_two):
     return set(list_one) & set(list_two)
 ```
 
-## Eliminate duplicate entries
+### Eliminate duplicate entries
 
 list or dict with duplicate values.
 
@@ -561,7 +561,7 @@ for surname in surnames:
 unique_names = set(surnames)
 ```
 
-# NamedTuples
+### NamedTuples
 
 namedtuples give you the ability to access fields by names rather than by index.
 
@@ -570,9 +570,28 @@ from collections import namedtuple
 
 EmployeeRow = namedtuple('EmployeeRow', ['f_name', 'l_name', 'department', 'salary', 'hiring_date'])
 ```
-# Ignore extra data with _
+### Ignore extra data with _
 
 ```python
 (name, age, temp, temp1) = user_info(user)
 (name, age, _, _) = user_info(user)
+```
+
+### unpack data
+
+```python
+list = ['dog', 'Rexxx', 10]
+animal = list[0]
+name = list[1]
+age = list[2]
+
+output = ('{name} the {animal} is {age} years old'.format(
+animal=animal, name=name, age=age))
+
+# -----------------------------------------------------------
+
+list = ['dog', 'Rexxx', 10]
+(animal, name, age) = list
+output = ('{name} the {animal} is {age} years old'.format(
+animal=animal, name=name, age=age))
 ```
