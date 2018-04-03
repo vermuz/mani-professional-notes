@@ -644,3 +644,14 @@ b = DerivedBlog()
 print(b.table_name()) # prints 'derived_student'
 # if a derived class calls table_name , the cls parameter is set to the derived class, rather than Student
 ```
+
+### In Python, the module is the unit of encapsulation.
+
+### isinstance
+
+```python
+def get_size(object):
+    if isinstance(object, (list, dict, str, tuple)):
+        return len(object)
+    return int(object)
+```
