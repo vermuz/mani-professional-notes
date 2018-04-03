@@ -560,3 +560,13 @@ for surname in surnames:
 #-------------------------------------
 unique_names = set(surnames)
 ```
+
+# NamedTuples
+
+namedtuples give you the ability to access fields by names rather than by index.
+
+```python
+from collections import namedtuple
+
+EmployeeRow = namedtuple('EmployeeRow', ['f_name', 'l_name', 'department', 'salary', 'hiring_date'])
+```
