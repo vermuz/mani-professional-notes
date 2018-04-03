@@ -632,7 +632,7 @@ class Student():
 
     def table_name(self):
         return self.__tablename__
-
+    # Such methods are more properly defined as a classmethod , using the decorator of the same name.
     @classmethod
     def other_table_name(cls):
         return cls.__tablename__
@@ -642,4 +642,5 @@ class DerivedStudent(Studen):
     
 b = DerivedBlog()
 print(b.table_name()) # prints 'derived_student'
+if a derived class calls table_name , the cls parameter is set to the derived class, rather than Student
 ```
