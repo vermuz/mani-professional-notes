@@ -655,3 +655,8 @@ def get_size(object):
         return len(object)
     return int(object)
 ```
+
+### “private” data
+
+- Attributes to be ‘protected’, which are not meant to be used directly by clients, should be prefixed with a single underscore. 
+- ‘private’ attributes not meant to be accessible by a subclass should be prefixed by two underscores.
