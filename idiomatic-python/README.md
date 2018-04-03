@@ -660,3 +660,6 @@ def get_size(object):
 
 - Attributes to be ‘protected’, which are not meant to be used directly by clients, should be prefixed with a single underscore. 
 - ‘private’ attributes not meant to be accessible by a subclass should be prefixed by two underscores.
+- Prepending a single underscore means thatthe symbol won’t be imported if the ‘all’ idiom is used. 
+- Prepending two underscores to an attribute name invokes Python’s
+name mangling
