@@ -1,4 +1,4 @@
-### Writing Idiomatic Python
+### Python Idioms
 
 ### error
 ```python
