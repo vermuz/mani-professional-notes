@@ -464,7 +464,7 @@ arguments than it originally expects. Instead of an error being thrown, another 
 being returned that expects the missing rest of the arguments*
 
 ```OCaml
-As an example, let’s have a look at a code snippet in OCaml:
+As an example, let's have a look at a code snippet in OCaml:
 let fn3 a b c = a + b + c;;
 let fn1 = fn3 10 20;; (* applying Currying *)
 print_int (fn1 30);; (* will print 60 *)
