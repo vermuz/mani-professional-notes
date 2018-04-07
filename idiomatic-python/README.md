@@ -660,6 +660,88 @@ def get_size(object):
 
 - Attributes to be ‘protected’, which are not meant to be used directly by clients, should be prefixed with a single underscore. 
 - ‘private’ attributes not meant to be accessible by a subclass should be prefixed by two underscores.
-- Prepending a single underscore means thatthe symbol won’t be imported if the ‘all’ idiom is used. 
+- Prepending a single underscore means that the symbol won’t be imported if the ‘all’ idiom is used. 
 - Prepending two underscores to an attribute name invokes Python’s
 name mangling
+
+```python
+class Test1():
+    def __init__(self):
+        self.id = 5
+        self.value = self.get_value()
+    
+    def get_value(self):
+        pass
+
+    def should_destroy_target(self):
+        return self.id == 52
+
+class Test2(Test1):
+    def get_value(self, some_new_parameter):
+    """Since 'get_value' is called from the base class's
+    __init__ method and the base class definition doesn't
+    take a parameter, trying to create a Test2 instance will
+    fail.
+    """
+    pass
+
+class Test3(Test1):
+    """We aren't aware of Test1's internals, and we innocently
+    create an instance attribute named 'id' and set it to 42.
+    This overwrites Test1's id attribute and we inadvertently
+    blow up the target.
+    """
+    def __init__(self):
+        super(Test3, self).__init__()
+        self.id = 42
+        # No relation to Test1's id, purely coincidental
+
+q = Test3()
+b = Test2() # Raises 'TypeError'
+q.should_destroy_target() # returns True
+q.id == 42 # returns True
+#----------------------------------------
+class Test1():
+    def __init__(self):
+        """Since 'id' is of vital importance to us, we don't
+        want a derived class accidentally overwriting it. We'll
+        prepend with double underscores to introduce name
+        mangling.
+        """
+        self.__id = 8
+        self.value = self.__get_value() # Our 'private copy'
+
+    def get_value(self):
+        pass
+
+    def should_destroy_target(self):
+        return self.__id == 42
+    # Here, we're storing a 'private copy' of get_value,
+    # and assigning it to '__get_value'. Even if a derived
+    # class overrides get_value in a way incompatible with
+    # ours, we're fine
+    __get_value = get_value
+
+class Test2(Test1):
+    def get_value(self, some_new_parameter):
+        pass
+
+class Test3(Test1):
+    def __init__(self):
+        """Now when we set 'id' to 42, it's not the same 'id'
+        that 'should_destroy_target' is concerned with. In fact,
+        if you inspect a Test3 object, you'll find it doesn't
+        have an __id attribute. So we can't mistakenly change
+        Test1's __id attribute even if we wanted to.
+        """
+        self.id = 42
+        # No relation to Test1's id, purely coincidental
+        super(Test3, self).__init__()
+
+q = Test3()
+b = Test2() # Works fine now
+q.should_destroy_target() # returns False
+q.id == 42 # returns True
+with pytest.raises(AttributeError):
+getattr(q, '__id')
+```
