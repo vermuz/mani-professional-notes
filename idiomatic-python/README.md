@@ -745,3 +745,70 @@ q.id == 42 # returns True
 with pytest.raises(AttributeError):
 getattr(q, '__id')
 ```
+
+## Properties
+
+```python
+class StoreItem():
+    def __init__(self, name, price):
+        self.name = name
+        # We could try to apply the tax rate here, but the item's price
+        # may be modified later, which erases the tax
+        self.price = price
+#---------------------------------------
+class StoreItem():
+    def __init__(self, name, price):
+        self.name = name
+        self._price = price
+
+    @property
+    def price(self):
+        # if we need to change how price is calculated, we can do it
+        # here (or in the "setter" and __init__)
+        return self._price * TAX_RATE
+
+    @price.setter
+    def price(self, value):
+        # The "setter" function must have the same name 
+        # as the property
+        self._price = value
+```
+
+### Repr
+
+- __repr__ is used for machines to read
+- __repr__ should contain all the information necessary to reconstruct the object
+- It’s especially useful in logging
+
+```python
+class Test():
+    def __init__(self, a=10, b=12, c=None):
+        self.a = a
+        self.b = b
+        self._c = c or {}
+    
+    def __str__(self):
+        return 'A is {}, B is {}'.format(self.a, self.b)
+
+    def console(instance):
+        print(instance)
+
+console([Test(), Test(c={'x': 'y'})])
+#---------------
+class Test():
+    def __init__(self, a=10, b=12, c=None):
+        self.a = a
+        self.b = b
+        self._c = c or {}
+
+    def __str__(self):
+        return '{}, {}'.format(self.a, self.b)
+
+    def __repr__(self):
+        return 'Test({}, {}, {})'.format(self.a, self.b, self._c)
+
+def console(instance):
+    print(instance)
+
+console([Test(), Test(cache={'x': 'y'})])
+```
