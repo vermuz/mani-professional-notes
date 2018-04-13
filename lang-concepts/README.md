@@ -494,3 +494,105 @@ if __name__ == '__main__':
     print("Double 6: %i" %a)
     print("Add 7 to 2: %i" %b)
 ```
+
+### Destructuring
+
+Destructuring allows you to “split up” arguments of functions into their components. For example when you define a function
+that will always be called with an array containing three elements, you can say in the function definition that you want these elements inside the array to get bound to variables a , b and c for example.
+
+```clojure
+(defn func
+    [[a b c] {d :id e :value}]
+    (str “Got ” a “, ” b “, ” c “, ” d “ and ” e))
+
+(println
+(func [11 22 33] {:value “foo” :id 555}))
+```
+
+we’ve called func with just two arguments:
+- a vector containing three elements: 11 22 33
+- a map containing two associations: :value => “foo” and :id => 555
+
+However, in the parameter definition of func we destructure these two values into their
+components, which allows us to directly bind these components to distinct symbols,
+without having to build program logic that splits up the vector and map:
+
+For destructuring the vector, we use the destructuring syntax [a b c] to bind a to 11 ,
+b to 22 and c to 33 .For destructuring the map, we use the syntax {d :id e :value} in order to bind d to
+555 and e to “foo” .
+
+### Pattern Matching
+
+Pattern Matching is a feature that lets you write functions that can dispatch to different
+implementations, depending on the arguments being provided to that function when called.
+
+```scala
+def fn(x: Any) = x match {
+    case i: Int => “x is an Integer: ” + i
+    case s: String => “x is a String: ” + s
+}
+
+println(fn(235))
+println(fn(“baz”))
+
+will result in the following output when run:
+x is an Integer: 235
+x is a String: baz
+```
+The syntax provides a keyword match that we are using in our function definition to dispatch to a certain implementation.
+The meaning of pattern matching is different in other languages i.e. Erlang.
+
+### Guards
+
+These allow you to check a given function parameter for a certain condition in order for it to dispatch to an implementation. We are concerned with data being passed rather than structure.
+
+```
+def fn(x: Int) = x match {
+    case p if (x > 0) && (x % 2 == 0) => “positive even int: ” + p
+    case p if x > 0 => “positive odd int: ” + p
+    case n if x < 0 => “negative int: ” + n
+    case z => “zero int: ” + z
+}
+
+println(fn(125))
+println(fn(126))
+println(fn(-123))
+println(fn(0))
+
+Running this example results in the following output:
+
+$ scala Guards.scala
+positive odd int: 125
+positive even int: 126
+negative int: -123
+zero int: 0
+```
+
+### Multiple Dispatch
+
+Multimethods are another concept for dispatching to the right snippet of code.
+- They usually allow you to add more “dispatch paths” dynamically at any time, so you don’t have to define all possible implementations in the beginning or in a single place in the source code.
+- They most commonly use the type of some object as dispatch criteria.
+
+```clojure
+An example in Clojure follows:
+(defmulti foo #(if (> % 100)
+                :large
+                :small))
+;; note that the following implementations of
+;; foo can be anywhere in your source code, even
+;; in totally unrelated files:
+(defmethod foo :large
+    [n]
+    (println (str “large value: ” n)))
+
+(defmethod foo :small
+    [n]
+    (println (str “small value: ” n)))
+
+(foo 10)
+(foo 1000)
+
+small value: 10
+large value: 1000
+```
