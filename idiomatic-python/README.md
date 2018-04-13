@@ -812,3 +812,28 @@ def console(instance):
 
 console([Test(), Test(cache={'x': 'y'})])
 ```
+
+### __str__ method
+
+```python
+class Test():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+a = Test(5, 7)
+print(a)
+# Prints '<__main__.Point object at 0x91ebd0>'
+#-------------------------
+class Test():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return '{0}, {1}'.format(self.x, self.y)
+
+b = Test(5, 7)
+print(b)
+# Prints '5, 7'
+```
