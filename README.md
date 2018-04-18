@@ -9,6 +9,7 @@ In my professional career, I have always considered learning to be one constant.
 2. [Pragmatic thinking](pragmatic-thinking)
 3. [Idiomatic Python](idiomatic-python)
 4. [Docker](docker)
+5. [Python](pynotes)
 
 # License
 
