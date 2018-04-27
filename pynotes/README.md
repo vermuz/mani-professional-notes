@@ -398,3 +398,16 @@ for item in zip(sunday, monday):
 (12, 12)
 (15, 14)
 ```
+
+### Classes
+
+Define structure and behaviour of objects.
+
+```python
+class Flight:
+    # Not a constructor just an intializer
+    def __init__():
+        self._number = number
+    def number(self):
+        return "ewe"
+```
