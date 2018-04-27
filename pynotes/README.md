@@ -411,3 +411,35 @@ class Flight:
     def number(self):
         return "ewe"
 ```
+
+### Packages
+
+- Package can contain other modules and packages
+- packages are directories
+- modules are single files
+- Python finds packages and modules via sys.path (list of directories)
+
+```python
+my_module.py
+
+in another file,
+import my_module
+
+
+example
+    example1
+    __main__.py
+```
+
+### Duck tails modules are Singletons
+
+- Modules as singletons
+
+
+### Functions
+
+```python
+function_name(arg1, arg2='mani')
+- arg1 -> positional
+- arg2 -> keyword arg
+```
