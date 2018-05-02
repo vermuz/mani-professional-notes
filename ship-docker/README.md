@@ -166,3 +166,124 @@ cat /etc/nginx/sites-available/default
 cd /var/www/html
 cat index.html
 ```
+
+
+##### Create a reusable container
+
+```
+docker run -it ubuntu:16:04 bash
+apt-get update && apt-get -y nginx
+```
+
+```
+docker ps -a
+```
+
+##### Docker diff of a container
+
+Show changes to container in relation to base image used.
+
+```
+docker diff <CONTAINER_NAME>
+```
+
+##### Docker commit changes for a new image
+
+So,
+- You take an image
+- Build a container off of it
+- Make changes to container
+- Get a diff of changes, `docker diff CONTAINER_NAME`
+- Commit changes so we can built a new Image
+
+```
+docker commit -h
+```
+
+```
+docker ps -a
+docker commit -a "Mani" -m "Installed nginx" <CONTAINER_NAME>
+docker commit -a "Mani" -m "Installed nginx" manitestcontainer/nginx:0.1.0
+
+# Get images
+docker images
+```
+
+##### Use above container
+
+```
+cd dcker
+echo "Hello mani" > index.html
+# Share current directory with html container, use the image we just made
+# and run nginx command
+docker run -it -p 80:80 -v $(pwd):/var/www/html manitestcontainer/nginx:0.1.0 nginx
+
+However this container will make a change and exit because docker uses daemon to
+run processes in background
+```
+
+```
+docker run -it -p 80:80 -v $(pwd):/var/www/html manitestcontainer/nginx:0.1.0 bash
+# Tell nginx to run in the foreground
+echo "daemon off;" >> /etc/nginx/nginx.conf
+```
+
+Now lets save the config,
+```
+docker diff <CONTAINER_NAME>
+docker commit -a "Mani" -m "nginx runs in foreground" <CONTAINER_NAME> manitestcontainer/nginx:0.2.0
+```
+
+##### Run container and serve content
+
+```
+docker run -it -p 80:80 -v $(pwd):/var/www/html manitestcontainer/nginx:0.2.0 nginx
+```
+
+##### Run container and server content in detached mode
+```
+# Detach so it doesnt hang on spinning it up
+docker run -d -it -p 80:80 -v $(pwd):/var/www/html manitestcontainer/nginx:0.2.0 nginx
+docker ps
+```
+
+##### Docker history
+
+```
+docker history manitestcontainer/nginx:0.2.0
+```
+
+#---------------------------------------------------------------------------------------
+
+##### Dockerfile
+
+```
+mkdir nginx
+cd nginx
+vim Dockerfile
+```
+
+```
+FROM ubuntu:16:04
+
+MAINTAINER Mani
+
+RUN apt-get update && apt-get install -y nginx \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && echo "daemon off;" >> /etc/nginx/nginx.conf
+
+CMD ["nginx"]
+```
+
+Note:
+- Dockerfile commits just like the commit command
+
+```
+# Look for dockerfile in current directory
+docker build -t manitestdocker/nginx:0.1.0 .
+# Run in detached mode
+docker run -d -p 80:80 -v $(pwd)/../:/var/www/html manitestcontainer/nginx:0.1.0
+# If you want to retag
+docker run -d -p 80:80 -v $(pwd)/../:/var/www/html manitestcontainer/nginx:0.2.0
+```
