@@ -25,6 +25,11 @@ m = 1, 2.4, "cat" # Packing
 a, b, c = m  # Unpacking
 ```
 
+```python
+tuple_1 = ("hello") # Type string
+tuple_2 = ("hello",) # Type Tuple
+tuple_3 = "hello", # Type Tuple
+```
 ### Lists
 
 ### Shallow Copy, Deep Copy
