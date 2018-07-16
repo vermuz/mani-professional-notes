@@ -69,7 +69,7 @@ for name in ('mani', 'ali'):
 ```python
 # Concatenate
 print((1, 2, 3) + (4, 5, 6)) # 1, 2, 3, 4, 5, 6
-print(("Mani", ) * 3) # World, World, World
+print(("Mani", ) * 3) # Mani, Mani, Mani
 ```
 
 ### Lists
