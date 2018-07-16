@@ -61,6 +61,11 @@ tuple_1 = ('a', 'b', 'c')
 print('a' in tuple_1)
 ```
 
+```python
+for name in ('mani', 'ali'):
+   print("Hello...", name)
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
