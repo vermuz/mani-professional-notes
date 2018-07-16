@@ -47,6 +47,14 @@ tuple_1[:] # a','l','g','o','r','i','t','h','m'
 tuple_1[7:-7] # ()
 ```
 
+```python
+# Convert tuple to list
+msg = "Hello world"
+print list(msg)
+print tuple(msg)
+print list(tuple(list(message)))
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
