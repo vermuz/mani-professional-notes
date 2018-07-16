@@ -135,7 +135,10 @@ d.rotate(3)
 - Deep Copy does not effect the original list (values are copied)
 
 ### __str__ method
-
+```python
+num = 123
+print(str(num))
+```
 ### __repr__ method
 
 ### Strings
