@@ -121,6 +121,14 @@ for i in hash:
      index +=1
 ```
 
+```python
+# Perform left rotate on the given list
+import collections
+list = [4, 5, 6, 7]
+d = collections.deque(list)
+d.rotate(3)
+```
+
 ### Shallow Copy, Deep Copy
 
 ### __str__ method
