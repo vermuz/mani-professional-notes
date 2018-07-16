@@ -80,6 +80,27 @@ del tuple_1[1][0] # "hello", [2, 3]
 
 ### Lists
 
+```python
+states = ["Washington", "NY", "NC", "MO", "MA"]
+for i in states:
+    print(i[0]) # W, N, N, M, M
+```
+
+```python
+# For each value in r1, get sum of ascii values
+# and push into new list
+r1 = ["Manchester", "Concord", "Bow", "Helsinki"]
+r2 = []
+# Each string in the list
+for i in r1:
+    sum = 0
+    # Each and every character of the string
+    for j in i:
+        sum = sum + ord(j) # ord gives ascii value
+ # Append ascii value of each string into the new list r2
+ r2.append(r1)
+```
+
 ### Shallow Copy, Deep Copy
 
 ### __str__ method
