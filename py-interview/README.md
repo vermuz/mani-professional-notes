@@ -66,6 +66,12 @@ for name in ('mani', 'ali'):
    print("Hello...", name)
 ```
 
+```python
+# Concatenate
+print((1, 2, 3) + (4, 5, 6)) # 1, 2, 3, 4, 5, 6
+print(("Mani", ) * 3) # World, World, World
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
