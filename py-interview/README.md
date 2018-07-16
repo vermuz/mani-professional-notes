@@ -30,6 +30,12 @@ tuple_1 = ("hello") # Type string
 tuple_2 = ("hello",) # Type Tuple
 tuple_3 = "hello", # Type Tuple
 ```
+
+```python
+tuple_1 = ('p', 'q', 'r', 's', 't', 'u')
+tuple_1[6] # Index out of range
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
