@@ -141,6 +141,15 @@ print(str(num))
 ```
 ### __repr__ method
 
+```python
+eval function needs to operate on an object
+repr -> returns an object
+str -> returns string literal
+y = "test string"
+y2 = eval(repr(y))
+if (y==y2):
+   print("strings are equal")
+```
 ### Strings
 
 ### Numbers
