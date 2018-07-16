@@ -37,6 +37,16 @@ tuple_1[6] # Index out of range
 tuple_1[-1] # 'u'
 ```
 
+```python
+# use slicing
+tuple_1 = ('a','l','g','o','r','i','t','h','m')
+tuple_1[1:4] # l, g, o
+tuple_1[:-7] # 'a','l'
+tuple_1[7:] # h, m
+tuple_1[:] # a','l','g','o','r','i','t','h','m'
+tuple_1[7:-7] # ()
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
