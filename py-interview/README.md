@@ -131,8 +131,8 @@ d.rotate(3)
 
 ### Shallow Copy, Deep Copy
 
-- Shallow Copy effects original list
-- Deep Copy does not effect the original list
+- Shallow Copy effects original list (addresses are copied)
+- Deep Copy does not effect the original list (values are copied)
 
 ### __str__ method
 
