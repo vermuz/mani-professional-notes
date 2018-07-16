@@ -55,6 +55,12 @@ print tuple(msg)
 print list(tuple(list(message)))
 ```
 
+```python
+# Check existence in tuple
+tuple_1 = ('a', 'b', 'c')
+print('a' in tuple_1)
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
