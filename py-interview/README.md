@@ -72,6 +72,12 @@ print((1, 2, 3) + (4, 5, 6)) # 1, 2, 3, 4, 5, 6
 print(("Mani", ) * 3) # Mani, Mani, Mani
 ```
 
+```python
+# Deletion
+tuple_1 = ("hello", [1, 2, 3])
+del tuple_1[1][0] # "hello", [2, 3]
+```
+
 ### Lists
 
 ### Shallow Copy, Deep Copy
