@@ -101,6 +101,26 @@ for i in r1:
  r2.append(r1)
 ```
 
+```python
+# Print all duplicated values in a string
+list_1 = [1, 2, 3, 1, 2, 4, 5, 6, 7], # 1, 2 are repeated
+
+# Empty array, insert 0 for for the 10 elements in the array, for each
+# number in list_1, convert number into index into hash array, increment slot
+# in hash array
+hash = []
+for i in range(10):
+    hash.append(0)
+for i in list_1:
+    hash[i]+=1
+i = 0
+index = 0
+for i in hash:
+    if i > 1:
+       print(index)
+     index +=1
+```
+
 ### Shallow Copy, Deep Copy
 
 ### __str__ method
