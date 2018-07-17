@@ -154,6 +154,7 @@ if (y==y2):
 
 ### Strings
 
-### Numbers
-
-### File Ops
+```python
+if __name__ == "__main__":
+     print("direct method")
+```
