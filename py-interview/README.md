@@ -152,7 +152,7 @@ if (y==y2):
    print("strings are equal")
 ```
 
-### Strings
+### main
 
 ```python
 if __name__ == "__main__":
