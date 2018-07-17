@@ -183,3 +183,16 @@ obj = SampleClass()
 obj.a
 obj.fun()
 ```
+
+
+```python
+class A:
+   def fun():
+      print("a")
+
+A.func() Instance
+a = A()  via Class
+
+a.func()
+```
+
