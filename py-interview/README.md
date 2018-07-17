@@ -168,5 +168,5 @@ class SampleClass:
             print('Hello')
             
 print(SampleClass.a)
-print(SampleClass.fun)
+print(SampleClass.fun) # Call via class is unbound, call via object is boundd
 ```
