@@ -209,3 +209,17 @@ class Human:
     def howMany(self):
        print(Human.population)
 ```
+
+```python
+class A(object):
+   def method(self):
+      print("A")
+   
+   @classmethod
+   def class_method(cls, x):
+      print(x)
+      
+   @staticmethod
+   def static_method(x):
+      print(x)
+```
