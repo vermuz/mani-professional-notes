@@ -158,3 +158,15 @@ if (y==y2):
 if __name__ == "__main__":
      print("direct method")
 ```
+
+### Classes
+
+```python
+class SampleClass:
+       a = 10
+       def fun(self):
+            print('Hello')
+            
+print(SampleClass.a)
+print(SampleClass.fun)
+```
