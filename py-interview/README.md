@@ -196,3 +196,16 @@ a = A()  via Class
 a.func()
 ```
 
+```python
+class Human:
+    population = 0
+    def __init__(self, name):
+      self.name = name
+      Human.population += 1 
+    def __del__():
+      Human.population -= 1
+    def sayHi(self):
+       print("Hi")
+    def howMany(self):
+       print(Human.population)
+```
