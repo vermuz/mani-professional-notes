@@ -168,5 +168,18 @@ class SampleClass:
             print('Hello')
             
 print(SampleClass.a)
-print(SampleClass.fun) # Call via class is unbound, call via object is boundd
+print(SampleClass.fun) 
+```
+
+### Call via class is unbound, call via object is bound
+
+```python
+class SampleClass:
+       a = 10
+       def fun(self):
+            print('Hello')
+            
+obj = SampleClass()
+obj.a
+obj.fun()
 ```
