@@ -1,6 +1,6 @@
-# Table of Contents
--[*args and **kwargs](#-argsandkwargs)
--[Debugging](#-debugging)
+### Table of Contents
+- [*args and **kwargs](#-args-and---kwargs)
+- [Debugging](#debugging)
 
 ### *args and **kwargs
 
