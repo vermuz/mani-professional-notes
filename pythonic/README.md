@@ -2,6 +2,7 @@
 - [*args and **kwargs](#-args-and---kwargs)
 - [Debugging](#debugging)
 - [Iterators](#iterators)
+- [Generators](#generators)
 
 ### *args and **kwargs
 
