@@ -1,6 +1,7 @@
 ### Table of Contents
 - [*args and **kwargs](#-args-and---kwargs)
 - [Debugging](#debugging)
+- [Iterators](#iterators)
 
 ### *args and **kwargs
 
