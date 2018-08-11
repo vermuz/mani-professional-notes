@@ -55,10 +55,10 @@ n: Continue execution until the next line in the current function is reached or 
 ### Iterators
 
 #### Iterable
-An iterable is any object in Python which has an __iter__ or a __getitem__ method defined which returns an iterator or can take indexes. In short an iterable is any object which can provide us with an iterator.
+_An iterable is any object in Python which has an __iter__ or a __getitem__ method defined which returns an iterator or can take indexes. In short an iterable is any object which can provide us with an iterator.
 
 #### Iterator
-An iterator is any object in Python which has a next (Python2) or __next__ method defined.
+_An iterator is any object in Python which has a next (Python2) or __next__ method defined.
 
 #### Iteration
-In simple words it is the process of taking an item from something e.g a list. When we use a loop to loop over something it is called iteration. It is the name given to the process itself. Now as we have a basic understanding of these terms let’s understand generators.
+_In simple words it is the process of taking an item from something e.g a list. When we use a loop to loop over something it is called iteration. It is the name given to the process itself. Now as we have a basic understanding of these terms let’s understand generators.
