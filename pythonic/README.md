@@ -185,3 +185,56 @@ product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
 
 # Output: 24
 ```
+
+### set Data Structure
+
+sets behave mostly like lists with the distinction that they can not contain duplicate values. 
+
+```python
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+
+duplicates = []
+for value in some_list:
+    if some_list.count(value) > 1:
+        if value not in duplicates:
+            duplicates.append(value)
+
+print(duplicates)
+# Output: ['b', 'n']
+```
+```python
+But there is a simpler and more elegant solution involving sets. You can simply do something like this:
+
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+duplicates = set([x for x in some_list if some_list.count(x) > 1])
+print(duplicates)
+# Output: set(['b', 'n'])
+```
+
+#### Intersection
+
+```python
+valid = set(['yellow', 'red', 'blue', 'green', 'black'])
+input_set = set(['red', 'brown'])
+print(input_set.intersection(valid))
+# Output: set(['red'])
+```
+
+#### Difference
+
+You can find the invalid values in the above example using the difference method. For example:
+
+```python
+valid = set(['yellow', 'red', 'blue', 'green', 'black'])
+input_set = set(['red', 'brown'])
+print(input_set.difference(valid))
+# Output: set(['brown'])
+```
+
+You can also create sets using the new notation:
+
+```python
+a_set = {'red', 'blue', 'green'}
+print(type(a_set))
+# Output: <type 'set'>
+```
