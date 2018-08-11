@@ -24,7 +24,7 @@ def greet_me(**kwargs):
 name = mani
 ```
 
-*** Debugging
+### Debugging
 
 Running from commandline
 
