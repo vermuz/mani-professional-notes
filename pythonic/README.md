@@ -143,3 +143,37 @@ for i in range(5):
 # Output:
 # [0, 0]
 ```
+
+### Filter
+
+Filter creates a list of elements for which a function returns true.
+
+```python
+number_list = range(-5, 5)
+less_than_zero = list(filter(lambda x: x < 0, number_list))
+print(less_than_zero)
+
+# Output: [-5, -4, -3, -2, -1]
+```
+
+### Reduce
+
+- Reduce is a really useful function for performing some computation on a list and returning the result.
+- It applies a rolling computation to sequential pairs of values in a list
+
+```python
+product = 1
+list = [1, 2, 3, 4]
+for num in list:
+    product = product * num
+
+# product = 24
+```
+```python
+Now let’s try it with reduce:
+
+from functools import reduce
+product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+
+# Output: 24
+```
