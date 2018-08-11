@@ -4,6 +4,7 @@
 - [Iterators](#iterators)
 - [Generators](#generators)
 - [Map Filter and reduce](#map-filter-and-reduce)
+- [set Datastructure](#set-data-structure)
 
 ### *args and **kwargs
 
