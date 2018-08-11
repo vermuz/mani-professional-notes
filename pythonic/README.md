@@ -1,3 +1,6 @@
+# Table of Contents
+-[*args and **kwargs](#-argsandkwargs)
+
 ### *args and **kwargs
 
  *args and **kwargs allow you to pass a variable number of arguments to a function.
