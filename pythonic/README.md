@@ -114,3 +114,18 @@ def fibon(n):
         yield a
         a, b = b, a + b
 ```
+
+### Map, Filter and Reduce
+
+Map applies a function to all the items in an input_list.
+
+```python
+items = [1, 2, 3, 4, 5]
+squared = []
+for i in items:
+    squared.append(i**2)
+```
+```
+items = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, items))
+```
