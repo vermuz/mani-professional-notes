@@ -169,8 +169,9 @@ for num in list:
 
 # product = 24
 ```
-```python
 Now let’s try it with reduce:
+
+```python
 
 from functools import reduce
 product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
