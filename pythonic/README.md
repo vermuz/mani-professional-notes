@@ -3,6 +3,7 @@
 - [Debugging](#debugging)
 - [Iterators](#iterators)
 - [Generators](#generators)
+- [Map Filter and reduce](#map-filter-and-reduce)
 
 ### *args and **kwargs
 
